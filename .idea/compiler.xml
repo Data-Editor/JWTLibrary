@@ -9,8 +9,5 @@
         <module name="JWTLibrary" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="JWTLibrary" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
