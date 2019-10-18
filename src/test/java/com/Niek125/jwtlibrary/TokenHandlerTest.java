@@ -2,6 +2,8 @@ package com.Niek125.jwtlibrary;
 
 import static org.junit.Assert.assertTrue;
 
+import com.Niek125.jwtlibrary.AuthObjectMaker.AuthObject;
+import com.Niek125.jwtlibrary.AuthObjectMaker.AuthObjectMaker;
 import com.Niek125.jwtlibrary.BlackList.TokenBlackList;
 import com.Niek125.jwtlibrary.SignatureReplicator.ISignatureReplicator;
 import com.Niek125.jwtlibrary.SignatureReplicator.SignatureReplicator;
@@ -33,7 +35,7 @@ public class TokenHandlerTest
         JWTKey.initialize("testkey", keys);
         JWTKey key = JWTKey.getInstance();
         ISignatureReplicator sigRep = new SignatureReplicator(key);
-        ITokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep);
+        ITokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep, new AuthObjectMaker());
         URL obj = null;
         URLConnection conn = null;
         try {
@@ -45,6 +47,7 @@ public class TokenHandlerTest
             e.printStackTrace();
         }
         System.out.print(tokenHandler.validateToken(new Token(conn.getHeaderField("tkn"))));
+        Object a = tokenHandler.getAuthObject();
         assertTrue( true );
     }
 }
