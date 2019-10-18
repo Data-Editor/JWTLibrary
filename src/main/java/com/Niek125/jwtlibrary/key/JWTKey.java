@@ -22,6 +22,7 @@ public class JWTKey implements IConfigKey {
         return instance;
     }
 
+    @Override
     public String getKey(long expiryTime){
 
         int i = 0;
@@ -34,6 +35,7 @@ public class JWTKey implements IConfigKey {
         return nonRotatingKey + rotatingKeys.get(i - 1).getKey();
     }
 
+    @Override
     public void addKey(IChangingKey key){
         rotatingKeys.remove(0);
         rotatingKeys.add(key);

@@ -2,24 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/IToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/IChangingKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/IConfigKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/IAuthObjectMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/ISignatureReplicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/ITokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/ITokenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenValidationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenValidationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/UserPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/UserPermissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/UserPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/JWTKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/JWTKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/RotatingKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/ChangingKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/ITokenHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenValidationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenValidationResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/UserPermissions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/UserPermissions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/UserPermissions.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/RotatingKey.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,6 +51,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.Niek125.jwtlibrary" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -112,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571057844293</updated>
       <workItem from="1571057847283" duration="713000" />
-      <workItem from="1571075201103" duration="32261000" />
+      <workItem from="1571075201103" duration="38785000" />
     </task>
     <servers />
   </component>

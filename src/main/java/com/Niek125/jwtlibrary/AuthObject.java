@@ -3,13 +3,13 @@ package com.Niek125.jwtlibrary;
 import java.util.Dictionary;
 import java.util.Enumeration;
 
-public class UserPermissions {
+public class AuthObject {
     private String userID;
     private String userName;
     private String profilePicture;
     private Dictionary<String, String> permissions;
 
-    UserPermissions(String userID, String userName, String profilePicture, Dictionary<String, String> permissions) {
+    AuthObject(String userID, String userName, String profilePicture, Dictionary<String, String> permissions) {
         this.userID = userID;
         this.userName = userName;
         this.profilePicture = profilePicture;

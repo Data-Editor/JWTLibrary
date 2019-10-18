@@ -2,6 +2,10 @@ package com.Niek125.jwtlibrary;
 
 import static org.junit.Assert.assertTrue;
 
+import com.Niek125.jwtlibrary.BlackList.TokenBlackList;
+import com.Niek125.jwtlibrary.SignatureReplicator.ISignatureReplicator;
+import com.Niek125.jwtlibrary.SignatureReplicator.SignatureReplicator;
+import com.Niek125.jwtlibrary.Token.Token;
 import com.Niek125.jwtlibrary.key.IChangingKey;
 import com.Niek125.jwtlibrary.key.JWTKey;
 import com.Niek125.jwtlibrary.key.ChangingKey;
@@ -28,7 +32,8 @@ public class TokenHandlerTest
         keys.add(new ChangingKey("isnowlonger", System.currentTimeMillis() + (1000 * 60 * 61)));
         JWTKey.initialize("testkey", keys);
         JWTKey key = JWTKey.getInstance();
-        ITokenHandler tokenHandler = new TokenHandler(key);
+        ISignatureReplicator sigRep = new SignatureReplicator(key);
+        ITokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep);
         URL obj = null;
         URLConnection conn = null;
         try {
@@ -39,9 +44,7 @@ public class TokenHandlerTest
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(conn.getHeaderField("tkn"));
-        tokenHandler.setToken(conn.getHeaderField("tkn"));
-        System.out.print(tokenHandler.validateToken());
+        System.out.print(tokenHandler.validateToken(new Token(conn.getHeaderField("tkn"))));
         assertTrue( true );
     }
 }

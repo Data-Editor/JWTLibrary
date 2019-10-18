@@ -1,7 +1,8 @@
 package com.Niek125.jwtlibrary;
 
-public interface ITokenHandler {
-    void setToken(String token);
-    TokenValidationResponse validateToken();
-    UserPermissions getPayload();
+import com.Niek125.jwtlibrary.Token.IToken;
+
+public interface ITokenHandler<T> {
+    TokenValidationResponse validateToken(IToken token);
+    T getAuthObject();
 }

@@ -1,52 +1,47 @@
 package com.Niek125.jwtlibrary;
 
 
-import com.Niek125.jwtlibrary.Token.Token;
-import com.Niek125.jwtlibrary.key.JWTKey;
+import com.Niek125.jwtlibrary.AuthObjectMaker.IAuthObjectMaker;
+import com.Niek125.jwtlibrary.BlackList.ITokenBlackList;
+import com.Niek125.jwtlibrary.SignatureReplicator.ISignatureReplicator;
+import com.Niek125.jwtlibrary.Token.IToken;
 import com.jayway.jsonpath.JsonPath;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.util.Base64;
-import java.util.regex.Pattern;
+public class TokenHandler<T> implements ITokenHandler<T> {
+    private ITokenBlackList blackList;
+    private ISignatureReplicator sigRep;
+    private IAuthObjectMaker<T> authMaker;
 
-public class TokenHandler implements ITokenHandler {
-    private JWTKey key;
-    private Token token;
-
-    TokenHandler(JWTKey key) {
-        this.key = key;
-        token = null;
+    TokenHandler(ITokenBlackList blacklist, ISignatureReplicator sigRep, IAuthObjectMaker<T> authMaker) {
+        this.blackList = blacklist;
+        this.sigRep = sigRep;
+        this.authMaker = authMaker;
     }
 
     @Override
-    public void setToken(String token) {
-        this.token = new Token(token.split(Pattern.quote(".")));
-    }
-
-    @Override
-    public TokenValidationResponse validateToken() {
+    public TokenValidationResponse validateToken(IToken token) {
         try {
-            //check for blacklist
-            MessageDigest digest = MessageDigest.getInstance(JsonPath.parse(this.token.getHeader()).read("$.alg"));
-            digest.update(key.getKey(Long.parseLong(JsonPath.parse(this.token.getPayload()).read("$.exp").toString())).getBytes());
-            String repSig = Base64.getUrlEncoder().encodeToString(
-                    new String(
-                            digest.digest(
-                                    (token.getHeader() + token.getPayload()).getBytes(StandardCharsets.ISO_8859_1))
-                    ).getBytes(StandardCharsets.ISO_8859_1));
-            if(!repSig.equals(token.getSignature()) || !JsonPath.parse(this.token.getHeader()).read("$.typ").equals("JWT")){
-                return TokenValidationResponse.FORGED;
+            if (!JsonPath.parse(token.getHeader()).read("$.typ").equals("JWT")) {
+                return TokenValidationResponse.NO_JWT;//not a jwt
             }
-            //generate user perms here in case of crash format is invalid
-        } catch (Exception e) {//false algorithm, format, expired
+            if (blackList.isBlacklisted(JsonPath.parse(token.getPayload()).read("$.jti"))) {
+                return TokenValidationResponse.BLACKLISTED;//blacklisted
+            }
+            if (Long.parseLong(JsonPath.parse(token.getPayload()).read("$.exp").toString()) + 300 < System.currentTimeMillis()) {
+                return TokenValidationResponse.EXPIRED;//expired
+            }
+            if (sigRep.isForged(token, JsonPath.parse(token.getHeader()).read("$.alg"), JsonPath.parse(token.getPayload()).read("$.exp"))) {
+                return TokenValidationResponse.FORGED;//forged
+            }
+            authMaker.makeAuthObject(token.getPayload());
+        } catch (Exception e) {//not the right format
             return TokenValidationResponse.FORGED;
         }
         return TokenValidationResponse.GOOD;
     }
 
     @Override
-    public UserPermissions getPayload() {
-        return null;
+    public T getAuthObject() {
+        return authMaker.getAuthObject();
     }
 }
