@@ -2,28 +2,39 @@ package com.Niek125.jwtlibrary.key;
 
 import java.util.List;
 
-public class JWTKey {
+public class JWTKey implements IConfigKey {
+    private static JWTKey instance;
     private String nonRotatingKey;
-    private List<RotatingKey> rotatingKeys;
+    private List<IChangingKey> rotatingKeys;
 
-    public JWTKey(String nonRotatingKey, List<RotatingKey> rotatingKeys){
+    private JWTKey(String nonRotatingKey, List<IChangingKey> rotatingKeys){
         this.nonRotatingKey = nonRotatingKey;
         this.rotatingKeys = rotatingKeys;
     }
 
+    public static void initialize(String nonRotatingKey, List<IChangingKey> rotatingKeys){
+        if(instance == null){
+            instance = new JWTKey(nonRotatingKey, rotatingKeys);
+        }
+    }
+
+    public static JWTKey getInstance(){
+        return instance;
+    }
+
     public String getKey(long expiryTime){
+
         int i = 0;
         try {
             while (expiryTime < rotatingKeys.get(i).getExpiryTime()){
                 i++;
             }
-        }catch (Exception e){
-            e.printStackTrace();
+        }catch (IndexOutOfBoundsException e){//this is not an error :) it's meant to be
         }
         return nonRotatingKey + rotatingKeys.get(i - 1).getKey();
     }
 
-    public void addKey(RotatingKey key){
+    public void addKey(IChangingKey key){
         rotatingKeys.remove(0);
         rotatingKeys.add(key);
     }

@@ -2,10 +2,15 @@ package com.Niek125.jwtlibrary;
 
 import static org.junit.Assert.assertTrue;
 
+import com.Niek125.jwtlibrary.key.IChangingKey;
 import com.Niek125.jwtlibrary.key.JWTKey;
-import com.Niek125.jwtlibrary.key.RotatingKey;
+import com.Niek125.jwtlibrary.key.ChangingKey;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 /**
@@ -19,11 +24,23 @@ public class TokenHandlerTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        ArrayList<RotatingKey> keys = new ArrayList<>();
-        keys.add(new RotatingKey("key1", System.currentTimeMillis() + 1000000));
-        JWTKey key = new JWTKey("nonrotatingkey", keys);
+        ArrayList<IChangingKey> keys = new ArrayList<>();
+        keys.add(new ChangingKey("isnowlonger", System.currentTimeMillis() + (1000 * 60 * 61)));
+        JWTKey.initialize("testkey", keys);
+        JWTKey key = JWTKey.getInstance();
         ITokenHandler tokenHandler = new TokenHandler(key);
-        tokenHandler.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b2tlbnNlcnZlci5jb20iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTkyMiwidXNlcmlkIjoiaGdkZ2hlbmhkaiIsInVzZXJuYW1lIjoiam9obmRvZSIsInByb2ZpbGVwaWN0dXJlIjoidXJscGF0aCIsInBlcm1pc3Npb25zIjpbeyJwcm9qZWN0aWQiOiJmeWZ1ZmhlaCIsInJvbGVuYW1lIjoiZ3Vlc3QifSx7InByb2plY3RpZCI6ImZlZmJlaGJlaCIsInJvbGVuYW1lIjoiYWRtaW4ifV19.F4saGGXpcFAByFAxOvYcPqjYMDPUsepNTqqutYnviTE");
+        URL obj = null;
+        URLConnection conn = null;
+        try {
+            obj = new URL("http://localhost:8080/Token/GetToken");
+            conn = obj.openConnection();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(conn.getHeaderField("tkn"));
+        tokenHandler.setToken(conn.getHeaderField("tkn"));
         System.out.print(tokenHandler.validateToken());
         assertTrue( true );
     }

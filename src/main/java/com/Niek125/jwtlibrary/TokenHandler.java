@@ -1,10 +1,13 @@
 package com.Niek125.jwtlibrary;
 
 
+import com.Niek125.jwtlibrary.Token.Token;
 import com.Niek125.jwtlibrary.key.JWTKey;
 import com.jayway.jsonpath.JsonPath;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.Base64;
 import java.util.regex.Pattern;
 
 public class TokenHandler implements ITokenHandler {
@@ -19,20 +22,24 @@ public class TokenHandler implements ITokenHandler {
     @Override
     public void setToken(String token) {
         this.token = new Token(token.split(Pattern.quote(".")));
-        System.out.print(JsonPath.parse(this.token.getHeader()).read("$.alg").toString());
     }
 
     @Override
     public TokenValidationResponse validateToken() {
         try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            //check for blacklist
+            MessageDigest digest = MessageDigest.getInstance(JsonPath.parse(this.token.getHeader()).read("$.alg"));
             digest.update(key.getKey(Long.parseLong(JsonPath.parse(this.token.getPayload()).read("$.exp").toString())).getBytes());
-            System.out.print(new String(digest.digest((token.getHeader() + Pattern.quote(".") + token.getPayload()).getBytes())));
-            if(new String(digest.digest((token.getHeader() + Pattern.quote(".") + token.getPayload()).getBytes())) != token.getSignature()){
+            String repSig = Base64.getUrlEncoder().encodeToString(
+                    new String(
+                            digest.digest(
+                                    (token.getHeader() + token.getPayload()).getBytes(StandardCharsets.ISO_8859_1))
+                    ).getBytes(StandardCharsets.ISO_8859_1));
+            if(!repSig.equals(token.getSignature()) || !JsonPath.parse(this.token.getHeader()).read("$.typ").equals("JWT")){
                 return TokenValidationResponse.FORGED;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            //generate user perms here in case of crash format is invalid
+        } catch (Exception e) {//false algorithm, format, expired
             return TokenValidationResponse.FORGED;
         }
         return TokenValidationResponse.GOOD;
