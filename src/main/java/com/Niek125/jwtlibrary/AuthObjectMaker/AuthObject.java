@@ -20,7 +20,7 @@ public class AuthObject {
         return userID;
     }
 
-    public String getUserName(){
+    public String getUserName() {
         return userName;
     }
 
@@ -28,11 +28,11 @@ public class AuthObject {
         return profilePicture;
     }
 
-    public Role getRole(String projectID){
+    public Role getRole(String projectID) {
         return permissions.get(projectID);
     }
 
-    public Enumeration<String> getProjects(){
+    public Enumeration<String> getProjects() {
         return permissions.keys();
     }
 }

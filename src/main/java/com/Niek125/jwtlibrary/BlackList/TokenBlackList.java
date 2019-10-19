@@ -5,35 +5,34 @@ import java.util.List;
 
 public class TokenBlackList implements ITokenBlackList {
     private static TokenBlackList instance;
-    private List<String> jtis;
-    private List<Long> exps;
+    private List<ITokenExpiration> jtis;
 
-    private  TokenBlackList(){
+    private TokenBlackList(List<ITokenExpiration> expiredTokens) {
         jtis = new ArrayList<>();
-        exps = new ArrayList<>();
     }
 
-    public static ITokenBlackList getInstance(){
-        if(instance == null){
-            instance = new TokenBlackList();
+    public void initialize(List<ITokenExpiration> expiredTokens) {
+        if (instance == null) {
+            instance = new TokenBlackList(expiredTokens);
         }
+    }
+
+    public static TokenBlackList getInstance() {
         return instance;
     }
 
     @Override
     public void removeExpired() {
-        for(int i = 0; i < exps.size(); i++){
-            if(exps.get(i) < System.currentTimeMillis()){
+        for (int i = 0; i < jtis.size(); i++) {
+            if (jtis.get(i).getExp() < System.currentTimeMillis()) {
                 jtis.remove(i);
-                exps.remove(i);
             }
         }
     }
 
     @Override
-    public void addToBlackList(String jti, long exp) {
-        jtis.add(jti);
-        exps.add(exp);
+    public void addToBlackList(ITokenExpiration t) {
+        jtis.add(t);
     }
 
     @Override

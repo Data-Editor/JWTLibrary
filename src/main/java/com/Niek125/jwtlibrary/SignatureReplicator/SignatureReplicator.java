@@ -1,7 +1,7 @@
 package com.Niek125.jwtlibrary.SignatureReplicator;
 
+import com.Niek125.jwtlibrary.SignatureReplicator.Key.IConfigKey;
 import com.Niek125.jwtlibrary.Token.IToken;
-import com.Niek125.jwtlibrary.key.IConfigKey;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -17,7 +17,7 @@ public class SignatureReplicator implements ISignatureReplicator {
 
     @Override
     public boolean isForged(IToken token, String alg, long exp){
-        MessageDigest digest = null;
+        MessageDigest digest;
         try {
             digest = MessageDigest.getInstance(alg);
         } catch (NoSuchAlgorithmException e) {

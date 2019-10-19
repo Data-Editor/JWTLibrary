@@ -1,15 +1,15 @@
-package com.Niek125.jwtlibrary.key;
+package com.Niek125.jwtlibrary.SignatureReplicator.Key;
 
-public class ChangingKey implements IChangingKey{
+public class ExpiringKey implements IExpiringKey {
     private String key;
     private long expiryTime;
 
-    public ChangingKey(String key, long expiryTime){
+    public ExpiringKey(String key, long expiryTime) {
         this.key = key;
         this.expiryTime = expiryTime;
     }
 
-    public String getKey(){
+    public String getKey() {
         return key;
     }
 

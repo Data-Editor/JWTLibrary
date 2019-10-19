@@ -1,16 +1,14 @@
 package com.Niek125.jwtlibrary;
 
-import static org.junit.Assert.assertTrue;
-
-import com.Niek125.jwtlibrary.AuthObjectMaker.AuthObject;
 import com.Niek125.jwtlibrary.AuthObjectMaker.AuthObjectMaker;
 import com.Niek125.jwtlibrary.BlackList.TokenBlackList;
+import com.Niek125.jwtlibrary.SignatureReplicator.Key.ExpiringKey;
+import com.Niek125.jwtlibrary.SignatureReplicator.Key.IExpiringKey;
+import com.Niek125.jwtlibrary.SignatureReplicator.Key.JWTKey;
 import com.Niek125.jwtlibrary.SignatureReplicator.ISignatureReplicator;
 import com.Niek125.jwtlibrary.SignatureReplicator.SignatureReplicator;
 import com.Niek125.jwtlibrary.Token.Token;
-import com.Niek125.jwtlibrary.key.IChangingKey;
-import com.Niek125.jwtlibrary.key.JWTKey;
-import com.Niek125.jwtlibrary.key.ChangingKey;
+import com.Niek125.jwtlibrary.TokenHandler.TokenHandler;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,6 +16,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -30,12 +30,12 @@ public class TokenHandlerTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        ArrayList<IChangingKey> keys = new ArrayList<>();
-        keys.add(new ChangingKey("isnowlonger", System.currentTimeMillis() + (1000 * 60 * 61)));
+        ArrayList<IExpiringKey> keys = new ArrayList<>();
+        keys.add(new ExpiringKey("isnowlonger", System.currentTimeMillis() + (1000 * 60 * 61)));
         JWTKey.initialize("testkey", keys);
         JWTKey key = JWTKey.getInstance();
         ISignatureReplicator sigRep = new SignatureReplicator(key);
-        ITokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep, new AuthObjectMaker());
+        TokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep, new AuthObjectMaker());
         URL obj = null;
         URLConnection conn = null;
         try {

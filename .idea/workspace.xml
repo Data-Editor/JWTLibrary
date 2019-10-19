@@ -2,15 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenExpiration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenExpiration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/IAuthObjectMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/IAuthObjectMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/ITokenHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/IToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/IToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenValidationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenValidationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/ChangingKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/ExpiringKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/IChangingKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/IExpiringKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/IConfigKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/IConfigKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/JWTKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/AuthObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/ITokenVerifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/Token/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/Token/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenVerifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/ITokenHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenValidationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/ChangingKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/ChangingKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IChangingKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IChangingKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IConfigKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IConfigKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,9 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -108,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571057844293</updated>
       <workItem from="1571057847283" duration="713000" />
-      <workItem from="1571075201103" duration="41679000" />
+      <workItem from="1571075201103" duration="49067000" />
     </task>
     <servers />
   </component>
@@ -127,16 +146,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

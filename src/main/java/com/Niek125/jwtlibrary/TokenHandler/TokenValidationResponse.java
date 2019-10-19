@@ -1,4 +1,4 @@
-package com.Niek125.jwtlibrary;
+package com.Niek125.jwtlibrary.TokenHandler;
 
 public enum TokenValidationResponse {
     GOOD,

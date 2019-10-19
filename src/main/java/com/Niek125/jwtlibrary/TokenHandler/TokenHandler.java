@@ -1,4 +1,4 @@
-package com.Niek125.jwtlibrary;
+package com.Niek125.jwtlibrary.TokenHandler;
 
 
 import com.Niek125.jwtlibrary.AuthObjectMaker.IAuthObjectMaker;
@@ -7,18 +7,17 @@ import com.Niek125.jwtlibrary.SignatureReplicator.ISignatureReplicator;
 import com.Niek125.jwtlibrary.Token.IToken;
 import com.jayway.jsonpath.JsonPath;
 
-public class TokenHandler<T> implements ITokenHandler<T> {
+public class TokenHandler<T> {
     private ITokenBlackList blackList;
     private ISignatureReplicator sigRep;
     private IAuthObjectMaker<T> authMaker;
 
-    TokenHandler(ITokenBlackList blacklist, ISignatureReplicator sigRep, IAuthObjectMaker<T> authMaker) {
+    public TokenHandler(ITokenBlackList blacklist, ISignatureReplicator sigRep, IAuthObjectMaker<T> authMaker) {
         this.blackList = blacklist;
         this.sigRep = sigRep;
         this.authMaker = authMaker;
     }
 
-    @Override
     public TokenValidationResponse validateToken(IToken token) {
         try {
             if (!JsonPath.parse(token.getHeader()).read("$.typ").equals("JWT")) {
@@ -40,7 +39,6 @@ public class TokenHandler<T> implements ITokenHandler<T> {
         return TokenValidationResponse.GOOD;
     }
 
-    @Override
     public T getAuthObject() {
         return authMaker.getAuthObject();
     }
