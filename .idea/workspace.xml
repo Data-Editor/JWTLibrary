@@ -2,34 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenExpiration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenExpiration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/IAuthObjectMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/IAuthObjectMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/ITokenHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/IToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/Token/IToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenValidationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenValidationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/ChangingKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/ExpiringKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/IChangingKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/IExpiringKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/IConfigKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/IConfigKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/key/JWTKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/ITokenHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/TokenBlackList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/TokenBlackList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenValidationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/ChangingKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/ChangingKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IChangingKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IChangingKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IConfigKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IConfigKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler/ITokenHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/ChangingKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IChangingKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IConfigKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TokenHandlerTest.shouldAnswerWithTrue (1)">
+  <component name="RunManager" selected="JUnit.TokenTest">
     <configuration name="TokenHandlerTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JWTLibrary" />
       <extension name="coverage">
@@ -109,8 +94,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TokenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JWTLibrary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Niek125.jwtlibrary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
+      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.TokenTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TokenTest" />
         <item itemvalue="JUnit.TokenHandlerTest.shouldAnswerWithTrue (1)" />
         <item itemvalue="JUnit.TokenHandlerTest.shouldAnswerWithTrue" />
       </list>
@@ -127,7 +128,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571057844293</updated>
       <workItem from="1571057847283" duration="713000" />
-      <workItem from="1571075201103" duration="49067000" />
+      <workItem from="1571075201103" duration="50263000" />
     </task>
     <servers />
   </component>

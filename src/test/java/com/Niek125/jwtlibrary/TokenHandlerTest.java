@@ -32,7 +32,7 @@ public class TokenHandlerTest
     {
         ArrayList<IExpiringKey> keys = new ArrayList<>();
         keys.add(new ExpiringKey("isnowlonger", System.currentTimeMillis() + (1000 * 60 * 61)));
-        JWTKey.initialize("testkey", keys);
+        //JWTKey.initialize("testkey", keys);
         JWTKey key = JWTKey.getInstance();
         ISignatureReplicator sigRep = new SignatureReplicator(key);
         TokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep, new AuthObjectMaker());
