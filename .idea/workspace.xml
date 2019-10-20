@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/ITokenBlackList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/TokenBlackList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/TokenBlackList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler/ITokenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/ChangingKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IChangingKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/IConfigKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/key/JWTKey.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571057844293</updated>
       <workItem from="1571057847283" duration="713000" />
-      <workItem from="1571075201103" duration="50263000" />
+      <workItem from="1571075201103" duration="50505000" />
     </task>
     <servers />
   </component>
