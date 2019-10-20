@@ -5,6 +5,7 @@ jdk:
   -
 script:
   - ./mvnw clean install
+  - "mvn cobertura:cobertura"
   - bash <(curl -s https://codecov.io/bash)
 
 after_success:
