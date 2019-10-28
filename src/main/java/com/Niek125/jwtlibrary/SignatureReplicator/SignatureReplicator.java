@@ -27,7 +27,7 @@ public class SignatureReplicator implements ISignatureReplicator {
         String repSig = Base64.getUrlEncoder().encodeToString(
                 new String(
                         digest.digest(
-                                (token.getHeader() + token.getPayload()).getBytes(StandardCharsets.ISO_8859_1))
+                                (Base64.getUrlEncoder().encodeToString(token.getHeader().getBytes(StandardCharsets.ISO_8859_1)) + Base64.getUrlEncoder().encodeToString(token.getPayload().getBytes(StandardCharsets.ISO_8859_1))).getBytes(StandardCharsets.ISO_8859_1))
                 ).getBytes(StandardCharsets.ISO_8859_1));
         return !repSig.equals(token.getSignature());
     }

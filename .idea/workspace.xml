@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/AuthObjectMakerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/JWTKeyTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/SignatureReplicatorTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenBlackListTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/IConfigKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/IConfigKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/AuthObjectMakerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/AuthObjectMakerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/SignatureReplicatorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/SignatureReplicatorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/AuthObjectMaker/AuthObjectMaker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/TokenBlackList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/BlackList/TokenBlackList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/Key/IConfigKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/Key/IConfigKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/AuthObjectMakerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/AuthObjectMakerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/SignatureReplicatorTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/SignatureReplicatorTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Niek125/jwtlibrary/TokenHandlerTests.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TokenService" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -67,8 +58,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TokenHandlerTests.shouldAnswerWithTrue">
-    <configuration name="JWTKeyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AuthObjectMakerTests.MakeAuthObjectTest">
+    <configuration name="AuthObjectMakerTests.MakeAuthObjectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JWTLibrary" />
       <extension name="coverage">
         <pattern>
@@ -77,8 +68,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
-      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.JWTKeyTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.AuthObjectMakerTests" />
+      <option name="METHOD_NAME" value="MakeAuthObjectTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,37 +106,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TokenBlackListTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JWTLibrary" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Niek125.jwtlibrary.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
-      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.TokenBlackListTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TokenHandlerTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JWTLibrary" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Niek125.jwtlibrary.Token.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
-      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.TokenHandlerTest" />
-      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TokenHandlerTests.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JWTLibrary" />
       <extension name="coverage">
@@ -161,13 +122,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.Niek125.jwtlibrary in JWTLibrary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JWTLibrary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Niek125.jwtlibrary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthObjectMakerTests.MakeAuthObjectTest" />
         <item itemvalue="JUnit.TokenHandlerTests.shouldAnswerWithTrue" />
-        <item itemvalue="JUnit.SignatureReplicatorTests" />
         <item itemvalue="JUnit.SignatureReplicatorTests.ForgeTest" />
-        <item itemvalue="JUnit.JWTKeyTests" />
-        <item itemvalue="JUnit.TokenBlackListTests" />
+        <item itemvalue="JUnit.com.Niek125.jwtlibrary in JWTLibrary" />
+        <item itemvalue="JUnit.SignatureReplicatorTests" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +159,7 @@
       <workItem from="1571057847283" duration="713000" />
       <workItem from="1571075201103" duration="55185000" />
       <workItem from="1571814721377" duration="9913000" />
-      <workItem from="1572285951127" duration="347000" />
+      <workItem from="1572285951127" duration="3467000" />
     </task>
     <servers />
   </component>

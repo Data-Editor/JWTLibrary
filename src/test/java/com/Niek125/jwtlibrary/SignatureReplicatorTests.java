@@ -15,14 +15,15 @@ import java.util.List;
 
 public class SignatureReplicatorTests {
     @Test
-    public void ForgeTest(){
+    public void ForgeTest() {
+        String time = "1572287565261";
         JWTKey k = JWTKey.getInstance();
         List<IExpiringKey> keys = new ArrayList<>();
-        keys.add(new ExpiringKey("failed", Long.parseLong("1571826207792") - 100));
-        keys.add(new ExpiringKey("isnowlonger", Long.parseLong("1571826207792") + 1000));
+        keys.add(new ExpiringKey("failed", Long.parseLong(time) - 100));
+        keys.add(new ExpiringKey("isnowlonger", Long.parseLong(time) + 1000));
         k.initialize("testkey", keys);
         ISignatureReplicator r = new SignatureReplicator(k);
-        IToken t = new Token("eyJ0eXAiOiJKV1QiLCJhbGciOiJTSEEtMjI0In0=.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcxODI2MjA3NzkyLCJpYXQiOjE1NzE4MjI2MDc3OTIsImp0aSI6IjQ1ZjI4NzBkLTIwMmYtNDM3YS04YjFiLWZmMzcwN2MzNzE0MCJ9.P1JoKT8LQj8_fVE_Pz8_Pz9tDD8-P3E_Pw==");
-        Assert.assertFalse(r.isForged(t, "SHA-224", Long.parseLong("1571826207792")));
+        IToken t = new Token("eyJ0eXAiOiJKV1QiLCJhbGciOiJTSEEifQ==.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcyMjkxMTY1MjYxLCJpYXQiOjE1NzIyODc1NjUyNjEsImp0aSI6IjhhY2U5NDg2LWIyZjItNDBhOS04YjlmLWMxZDhiNTU2NDdmZiJ9.Pz8_bz8_Pz94Chw_aD84RWRObz4=");
+        Assert.assertFalse(r.isForged(t, "SHA", Long.parseLong(time)));
     }
 }

@@ -40,6 +40,7 @@ public class TokenHandlerTests
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(conn.getHeaderField("tkn"));
         System.out.print(tokenHandler.validateToken(new Token(conn.getHeaderField("tkn"))));
         Object a = tokenHandler.getAuthObject();
         assertTrue( true );

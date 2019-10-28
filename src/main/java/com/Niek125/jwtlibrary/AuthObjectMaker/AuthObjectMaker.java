@@ -21,7 +21,7 @@ public class AuthObjectMaker implements IAuthObjectMaker<AuthObject> {
             for (int i = 0; i < (int)JsonPath.parse(payload).read("$.pms.length()"); i++) {
                 permissions.put(JsonPath.parse(payload).read("$.pms[" + i + "].pid"), Role.valueOf(JsonPath.parse(payload).read("$.pms[" + i + "].rln")));
             }
-        } catch (Exception e) {//missing eiher pid or rln
+        } catch (Exception e) {//missing either pid or rln
         }
         authObject = new AuthObject(
                 JsonPath.parse(payload).read("$.uid"),
