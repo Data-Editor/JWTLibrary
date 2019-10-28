@@ -5,7 +5,7 @@ import com.Niek125.jwtlibrary.Token.Token;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TokenTest {
+public class TokenTests {
     @Test
     public void InvalidLengthShorterTest(){
         boolean thrownException = false;

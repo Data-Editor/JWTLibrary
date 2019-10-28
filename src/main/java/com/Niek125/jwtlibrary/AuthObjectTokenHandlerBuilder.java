@@ -15,9 +15,10 @@ import com.Niek125.jwtlibrary.SignatureReplicator.SignatureReplicator;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class AuthObjectTokenHandlerBuilder extends TokenHandlerBuilder<AuthObject> {
-    public void configure(List<ITokenExpiration> expiredTokens, String nonExpiringKey, List<IExpiringKey> expiringKeys) {
+    public void configure(List<ITokenExpiration> expiredTokens, String nonExpiringKey, List<IExpiringKey> expiringKeys, int cleanPeriod) {
         JWTKey key = JWTKey.getInstance();
         key.initialize(nonExpiringKey, expiringKeys);
         TokenBlackList blackList = TokenBlackList.getInstance();
@@ -25,7 +26,9 @@ public class AuthObjectTokenHandlerBuilder extends TokenHandlerBuilder<AuthObjec
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         Runnable task = () -> {
             blackList.removeExpired();
+            key.removeExpiredKeys();
         };
+        executor.scheduleWithFixedDelay(task, 0, cleanPeriod, TimeUnit.SECONDS);
     }
 
     @Override

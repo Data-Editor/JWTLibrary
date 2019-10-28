@@ -4,4 +4,6 @@ public interface IConfigKey {
     String getKey(long expiryTime);
 
     void addKey(IExpiringKey key);
+
+    void removeExpiredKeys();
 }

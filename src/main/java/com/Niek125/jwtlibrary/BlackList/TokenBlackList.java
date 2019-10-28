@@ -7,17 +7,20 @@ public class TokenBlackList implements ITokenBlackList {
     private static TokenBlackList instance;
     private List<ITokenExpiration> jtis;
 
-    private TokenBlackList(List<ITokenExpiration> expiredTokens) {
+    private TokenBlackList() {
         jtis = new ArrayList<>();
     }
 
     public void initialize(List<ITokenExpiration> expiredTokens) {
-        if (instance == null) {
-            instance = new TokenBlackList(expiredTokens);
+        if(jtis.size() == 0){
+            jtis = expiredTokens;
         }
     }
 
     public static TokenBlackList getInstance() {
+        if (instance == null) {
+            instance = new TokenBlackList();
+        }
         return instance;
     }
 
@@ -37,6 +40,6 @@ public class TokenBlackList implements ITokenBlackList {
 
     @Override
     public boolean isBlacklisted(String jti) {
-        return jtis.contains(jti);
+        return jtis.stream().filter( t -> t.getJti().equals(jti)).findFirst().isPresent();
     }
 }

@@ -19,27 +19,21 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Unit test for simple App.
- */
-public class TokenHandlerTest
+public class TokenHandlerTests
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
     public void shouldAnswerWithTrue()
     {
-        /*ArrayList<IExpiringKey> keys = new ArrayList<>();
+        ArrayList<IExpiringKey> keys = new ArrayList<>();
         keys.add(new ExpiringKey("isnowlonger", System.currentTimeMillis() + (1000 * 60 * 61)));
-        //JWTKey.initialize("testkey", keys);
         JWTKey key = JWTKey.getInstance();
+        key.initialize("testkey", keys);
         ISignatureReplicator sigRep = new SignatureReplicator(key);
         TokenHandler tokenHandler = new TokenHandler(TokenBlackList.getInstance(), sigRep, new AuthObjectMaker());
         URL obj = null;
         URLConnection conn = null;
         try {
-            obj = new URL("http://localhost:8080/Token/GetToken");
+            obj = new URL("http://localhost:8081/Token/GetToken");
             conn = obj.openConnection();
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -47,7 +41,7 @@ public class TokenHandlerTest
             e.printStackTrace();
         }
         System.out.print(tokenHandler.validateToken(new Token(conn.getHeaderField("tkn"))));
-        Object a = tokenHandler.getAuthObject();*/
+        Object a = tokenHandler.getAuthObject();
         assertTrue( true );
     }
 }
