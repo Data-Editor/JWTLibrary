@@ -8,11 +8,13 @@ import com.Niek125.jwtlibrary.Token.IToken;
 import com.jayway.jsonpath.JsonPath;
 
 public class TokenHandler<T> {
+    private long maxDelay;
     private ITokenBlackList blackList;
     private ISignatureReplicator sigRep;
     private IAuthObjectMaker<T> authMaker;
 
-    public TokenHandler(ITokenBlackList blacklist, ISignatureReplicator sigRep, IAuthObjectMaker<T> authMaker) {
+    public TokenHandler(long maxDelay, ITokenBlackList blacklist, ISignatureReplicator sigRep, IAuthObjectMaker<T> authMaker) {
+        this.maxDelay = maxDelay;
         this.blackList = blacklist;
         this.sigRep = sigRep;
         this.authMaker = authMaker;
@@ -23,7 +25,7 @@ public class TokenHandler<T> {
             if (!JsonPath.parse(token.getHeader()).read("$.typ").equals("JWT")) {
                 return TokenValidationResponse.NO_JWT;
             }
-            if (Long.parseLong(JsonPath.parse(token.getPayload()).read("$.exp").toString()) - 300 < System.currentTimeMillis()) {
+            if (Long.parseLong(JsonPath.parse(token.getPayload()).read("$.exp").toString()) - maxDelay < System.currentTimeMillis()) {
                 return TokenValidationResponse.EXPIRED;
             }
             if (blackList.isBlacklisted(JsonPath.parse(token.getPayload()).read("$.jti"))) {

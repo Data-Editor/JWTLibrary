@@ -24,9 +24,8 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-public class TokenHandlerTests
-{
-    private TokenHandler<AuthObject> getTokenHandler(){
+public class TokenHandlerTests {
+    private TokenHandler<AuthObject> getTokenHandler() {
 
         TokenBlackList blackList = TokenBlackList.getInstance();
         JWTKey key = JWTKey.getInstance();
@@ -36,7 +35,7 @@ public class TokenHandlerTests
         key.initialize("testkey", keys);
         SignatureReplicator sigRep = new SignatureReplicator(key);
         AuthObjectMaker authMaker = new AuthObjectMaker();
-        TokenHandler<AuthObject> handler = new TokenHandler(blackList, sigRep, authMaker);
+        TokenHandler<AuthObject> handler = new TokenHandler(300, blackList, sigRep, authMaker);
         return handler;
     }
 
@@ -69,15 +68,14 @@ public class TokenHandlerTests
     }
 
     @Test
-    public void noJWT()
-    {
+    public void noJWT() {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = new Token("eyJ0eXAiOiJPYXV0aDIiLCJhbGciOiJTSEEifQ==.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcyMjkxMTY1MjYxLCJpYXQiOjE1NzIyODc1NjUyNjEsImp0aSI6IjhhY2U5NDg2LWIyZjItNDBhOS04YjlmLWMxZDhiNTU2NDdmZiJ9.Pz8_bz8_Pz94Chw_aD84RWRObz4=");
         Assert.assertEquals(TokenValidationResponse.NO_JWT, handler.validateToken(token));
     }
 
     @Test
-    public void expired(){
+    public void expired() {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = new Token("eyJ0eXAiOiJKV1QiLCJhbGciOiJTSEEifQ==.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcyMjkxMTY1MjYxLCJpYXQiOjE1NzIyODc1NjUyNjEsImp0aSI6IjhhY2U5NDg2LWIyZjItNDBhOS04YjlmLWMxZDhiNTU2NDdmZiJ9.Pz8_bz8_Pz94Chw_aD84RWRObz4=");
         Assert.assertEquals(TokenValidationResponse.EXPIRED, handler.validateToken(token));

@@ -12,11 +12,14 @@ public abstract class TokenHandlerBuilder<T> {
 
     public TokenHandler<T> getTokenHandler() {
         return new TokenHandler<>(
+                getMaxDelay(),
                 getBlackList(),
                 getSigRep(),
                 getAuthMaker()
         );
     }
+
+    abstract long getMaxDelay();
 
     abstract ITokenBlackList getBlackList();
 

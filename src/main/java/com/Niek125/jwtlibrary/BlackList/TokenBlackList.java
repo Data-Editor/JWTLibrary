@@ -5,21 +5,24 @@ import java.util.List;
 
 public class TokenBlackList implements ITokenBlackList {
     private static TokenBlackList instance;
+    private long maxDelay;
     private List<ITokenExpiration> jtis;
 
-    private TokenBlackList() {
+    private TokenBlackList(long maxDelay) {
         jtis = new ArrayList<>();
+        this.maxDelay = maxDelay;
     }
 
-    public void initialize(List<ITokenExpiration> expiredTokens) {
+    public void initialize(long maxDelay, List<ITokenExpiration> expiredTokens) {
         if(jtis.size() == 0){
+            this.maxDelay = maxDelay;
             jtis = expiredTokens;
         }
     }
 
     public static TokenBlackList getInstance() {
         if (instance == null) {
-            instance = new TokenBlackList();
+            instance = new TokenBlackList(0);
         }
         return instance;
     }
@@ -27,7 +30,7 @@ public class TokenBlackList implements ITokenBlackList {
     @Override
     public void removeExpired() {
         for (int i = 0; i < jtis.size(); i++) {
-            if (jtis.get(i).getExp() < System.currentTimeMillis()) {
+            if (jtis.get(i).getExp() - maxDelay < System.currentTimeMillis()) {
                 jtis.remove(i);
             }
         }

@@ -18,17 +18,25 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class AuthObjectTokenHandlerBuilder extends TokenHandlerBuilder<AuthObject> {
-    public void configure(List<ITokenExpiration> expiredTokens, String nonExpiringKey, List<IExpiringKey> expiringKeys, int cleanPeriod) {
+    private long maxDelay;
+
+    public void configure(long maxDelay, List<ITokenExpiration> expiredTokens, String nonExpiringKey, List<IExpiringKey> expiringKeys, int cleanPeriod) {
+        this.maxDelay = maxDelay;
         JWTKey key = JWTKey.getInstance();
         key.initialize(nonExpiringKey, expiringKeys);
         TokenBlackList blackList = TokenBlackList.getInstance();
-        blackList.initialize(expiredTokens);
+        blackList.initialize(maxDelay, expiredTokens);
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         Runnable task = () -> {
             blackList.removeExpired();
             key.removeExpiredKeys();
         };
         executor.scheduleWithFixedDelay(task, 0, cleanPeriod, TimeUnit.SECONDS);
+    }
+
+    @Override
+    long getMaxDelay(){
+        return maxDelay;
     }
 
     @Override

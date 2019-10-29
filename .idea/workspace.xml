@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -152,7 +155,7 @@
       <workItem from="1571814721377" duration="9913000" />
       <workItem from="1572285951127" duration="4583000" />
       <workItem from="1572337309203" duration="10835000" />
-      <workItem from="1572362706687" duration="260000" />
+      <workItem from="1572362706687" duration="989000" />
     </task>
     <servers />
   </component>

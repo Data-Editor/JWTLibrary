@@ -29,7 +29,7 @@ public class TokenBlackListTests {
         Field instance = JWTKey.class.getDeclaredField("instance");
         instance.setAccessible(true);
         instance.set(t, null);
-        t.initialize(tokens);
+        t.initialize(0, tokens);
         Assert.assertTrue(t.isBlacklisted("banned"));
         Assert.assertFalse(t.isBlacklisted("valid"));
         t.addToBlackList(new TokenExpiration("valid", 12345));
@@ -56,8 +56,8 @@ public class TokenBlackListTests {
         Field instance = JWTKey.class.getDeclaredField("instance");
         instance.setAccessible(true);
         instance.set(t, null);
-        t.initialize(tokens);
-        t.initialize(new ArrayList<>());
+        t.initialize(0, tokens);
+        t.initialize(0, new ArrayList<>());
         Assert.assertTrue(t.isBlacklisted("banned"));
     }
 }
