@@ -101,7 +101,7 @@ public class TokenHandlerTests
         Assert.assertEquals(TokenValidationResponse.GOOD, handler.validateToken(token));
         Field signature = Token.class.getDeclaredField("signature");
         signature.setAccessible(true);
-        signature.set(token, ((String)signature.get(token)) + "a");
+        signature.set(token, signature.get(token) + "a");
         Assert.assertEquals(TokenValidationResponse.FORGED, handler.validateToken(token));
     }
 }

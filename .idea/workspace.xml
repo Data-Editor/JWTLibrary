@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TokenHandlerTests.forged">
+  <component name="RunManager" selected="JUnit.com.Niek125.jwtlibrary in JWTLibrary">
     <configuration name="TokenHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JWTLibrary" />
       <extension name="coverage">
@@ -131,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TokenHandlerTests.forged" />
         <item itemvalue="JUnit.com.Niek125.jwtlibrary in JWTLibrary" />
+        <item itemvalue="JUnit.TokenHandlerTests.forged" />
         <item itemvalue="JUnit.TokenHandlerTests.blacklisted" />
         <item itemvalue="JUnit.TokenHandlerTests" />
         <item itemvalue="JUnit.TokenHandlerTests.expired" />
@@ -153,7 +151,8 @@
       <workItem from="1571075201103" duration="55185000" />
       <workItem from="1571814721377" duration="9913000" />
       <workItem from="1572285951127" duration="4583000" />
-      <workItem from="1572337309203" duration="10655000" />
+      <workItem from="1572337309203" duration="10835000" />
+      <workItem from="1572362706687" duration="260000" />
     </task>
     <servers />
   </component>
@@ -172,21 +171,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/Key/JWTKey.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/SignatureReplicator/SignatureReplicator.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
