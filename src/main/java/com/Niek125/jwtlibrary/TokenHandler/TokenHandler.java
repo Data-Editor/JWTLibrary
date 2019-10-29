@@ -21,16 +21,16 @@ public class TokenHandler<T> {
     public TokenValidationResponse validateToken(IToken token) {
         try {
             if (!JsonPath.parse(token.getHeader()).read("$.typ").equals("JWT")) {
-                return TokenValidationResponse.NO_JWT;//not a jwt
+                return TokenValidationResponse.NO_JWT;
+            }
+            if (Long.parseLong(JsonPath.parse(token.getPayload()).read("$.exp").toString()) - 300 < System.currentTimeMillis()) {
+                return TokenValidationResponse.EXPIRED;
             }
             if (blackList.isBlacklisted(JsonPath.parse(token.getPayload()).read("$.jti"))) {
-                return TokenValidationResponse.BLACKLISTED;//blacklisted
-            }
-            if (Long.parseLong(JsonPath.parse(token.getPayload()).read("$.exp").toString()) + 300 < System.currentTimeMillis()) {
-                return TokenValidationResponse.EXPIRED;//expired
+                return TokenValidationResponse.BLACKLISTED;
             }
             if (sigRep.isForged(token, JsonPath.parse(token.getHeader()).read("$.alg"), JsonPath.parse(token.getPayload()).read("$.exp"))) {
-                return TokenValidationResponse.FORGED;//forged
+                return TokenValidationResponse.FORGED;
             }
             authMaker.makeAuthObject(token.getPayload());
         } catch (Exception e) {//not the right format

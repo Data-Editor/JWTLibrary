@@ -11,7 +11,7 @@ public abstract class TokenHandlerBuilder<T> {
     }
 
     public TokenHandler<T> getTokenHandler() {
-        return new TokenHandler(
+        return new TokenHandler<>(
                 getBlackList(),
                 getSigRep(),
                 getAuthMaker()
