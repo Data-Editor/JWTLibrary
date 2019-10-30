@@ -49,7 +49,7 @@ public class JWTKeyTests {
     }
 
     @Test
-    public void DoubleInitializingTest() throws NoSuchFieldException, IllegalAccessException {
+    public void DoubleInitializingTest() throws NoSuchFieldException, IllegalAccessException, InterruptedException {
         JWTKey k = JWTKey.getInstance();
         List<IExpiringKey> keys = new ArrayList<>();
         keys.add(new ExpiringKey("failed", System.currentTimeMillis() - 100));
@@ -57,6 +57,12 @@ public class JWTKeyTests {
         Field instance = JWTKey.class.getDeclaredField("instance");
         instance.setAccessible(true);
         instance.set(k, null);
+        Field fKeys = JWTKey.class.getDeclaredField("expiringKeys");
+        fKeys.setAccessible(true);
+        fKeys.set(k, new ArrayList<>());
+        Field fkey = JWTKey.class.getDeclaredField("nonExpiringKey");
+        fkey.setAccessible(true);
+        fkey.set(k, "defaultKey");
         k.initialize("akey", keys);
         k.initialize("failed", new ArrayList<>());
         Assert.assertEquals("akeytest", k.getKey(System.currentTimeMillis()));
