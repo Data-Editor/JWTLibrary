@@ -54,7 +54,7 @@ public class TokenHandlerTests {
                         "\"pid\":\"aprojectid1\"}]," +
                         "\"iss\":\"http://localhost:8080\"," +
                         "\"pfp\":\"apfp\"," +
-                        "\"exp\":" + (System.currentTimeMillis() + (1000 * 60)) + "," +
+                        "\"exp\":" + (System.currentTimeMillis() + (1000 * 60 * 5)) + "," +
                         "\"iat\":1572287565261," +
                         "\"jti\":\"8ace9486-b2f2-40a9-8b9f-c1d8b55647ff\"}").getBytes(StandardCharsets.ISO_8859_1)));
         MessageDigest digest = MessageDigest.getInstance("SHA");
@@ -79,13 +79,6 @@ public class TokenHandlerTests {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = new Token("eyJ0eXAiOiJKV1QiLCJhbGciOiJTSEEifQ==.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcyMjkxMTY1MjYxLCJpYXQiOjE1NzIyODc1NjUyNjEsImp0aSI6IjhhY2U5NDg2LWIyZjItNDBhOS04YjlmLWMxZDhiNTU2NDdmZiJ9.Pz8_bz8_Pz94Chw_aD84RWRObz4=");
         Assert.assertEquals(TokenValidationResponse.EXPIRED, handler.validateToken(token));
-    }
-
-    @Test
-    public void assertTime() throws InterruptedException {
-        long t = System.currentTimeMillis();
-        Thread.sleep(200);
-        Assert.assertEquals(System.currentTimeMillis(), t);
     }
 
     @Test
