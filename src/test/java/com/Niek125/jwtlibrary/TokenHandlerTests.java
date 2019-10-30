@@ -31,7 +31,7 @@ public class TokenHandlerTests {
         JWTKey key = JWTKey.getInstance();
         List<IExpiringKey> keys = new ArrayList<>();
         keys.add(new ExpiringKey("failed", (System.currentTimeMillis() - 100)));
-        keys.add(new ExpiringKey("isnowlonger", (System.currentTimeMillis() + (1000 * 60 * 5))));
+        keys.add(new ExpiringKey("isnowlonger", (System.currentTimeMillis() + (1000 * 60 * 10))));
         key.initialize("testkey", keys);
         SignatureReplicator sigRep = new SignatureReplicator(key);
         AuthObjectMaker authMaker = new AuthObjectMaker();
