@@ -32,9 +32,7 @@ public class JWTKey implements IConfigKey {
         System.out.println(expiringKeys.size());
         int i;
         for (i = 0; i < expiringKeys.size(); i++) {
-            Boolean b = expiryTime < expiringKeys.get(i).getExpiryTime();
-            System.out.println(b);
-            if(b){
+            if(expiryTime < expiringKeys.get(i).getExpiryTime()){
                 break;
             }
         }

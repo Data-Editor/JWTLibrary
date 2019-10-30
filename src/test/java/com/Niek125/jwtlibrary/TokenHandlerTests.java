@@ -25,13 +25,21 @@ import java.util.Base64;
 import java.util.List;
 
 public class TokenHandlerTests {
-    private TokenHandler<AuthObject> getTokenHandler() {
+    private TokenHandler<AuthObject> getTokenHandler() throws IllegalAccessException, NoSuchFieldException {
 
         TokenBlackList blackList = TokenBlackList.getInstance();
         JWTKey key = JWTKey.getInstance();
         List<IExpiringKey> keys = new ArrayList<>();
         keys.add(new ExpiringKey("failed", (System.currentTimeMillis() - 100)));
-        keys.add(new ExpiringKey("isnowlonger", (System.currentTimeMillis() + (1000 * 60 * 10))));
+        keys.add(new ExpiringKey("isnowlonger", (System.currentTimeMillis() + (1000 * 60 * 10))));Field instance = JWTKey.class.getDeclaredField("instance");
+        instance.setAccessible(true);
+        instance.set(key, null);
+        Field fKeys = JWTKey.class.getDeclaredField("expiringKeys");
+        fKeys.setAccessible(true);
+        fKeys.set(key, new ArrayList<>());
+        Field fkey = JWTKey.class.getDeclaredField("nonExpiringKey");
+        fkey.setAccessible(true);
+        fkey.set(key, "defaultKey");
         key.initialize("testkey", keys);
         SignatureReplicator sigRep = new SignatureReplicator(key);
         AuthObjectMaker authMaker = new AuthObjectMaker();
@@ -68,21 +76,21 @@ public class TokenHandlerTests {
     }
 
     @Test
-    public void noJWT() {
+    public void noJWT() throws NoSuchFieldException, IllegalAccessException {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = new Token("eyJ0eXAiOiJPYXV0aDIiLCJhbGciOiJTSEEifQ==.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcyMjkxMTY1MjYxLCJpYXQiOjE1NzIyODc1NjUyNjEsImp0aSI6IjhhY2U5NDg2LWIyZjItNDBhOS04YjlmLWMxZDhiNTU2NDdmZiJ9.Pz8_bz8_Pz94Chw_aD84RWRObz4=");
         Assert.assertEquals(TokenValidationResponse.NO_JWT, handler.validateToken(token));
     }
 
     @Test
-    public void expired() {
+    public void expired() throws NoSuchFieldException, IllegalAccessException {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = new Token("eyJ0eXAiOiJKV1QiLCJhbGciOiJTSEEifQ==.eyJ1aWQiOiJhdXNlcmlkIiwidW5tIjoiYXVzZXJuYW1lIiwicG1zIjpbeyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQwIn0seyJybG4iOiJHVUVTVCIsInBpZCI6ImFwcm9qZWN0aWQxIn1dLCJpc3MiOiJcXFFodHRwOi8vbG9jYWxob3N0OjgwODBcXEUiLCJwZnAiOiJhcGZwIiwiZXhwIjoxNTcyMjkxMTY1MjYxLCJpYXQiOjE1NzIyODc1NjUyNjEsImp0aSI6IjhhY2U5NDg2LWIyZjItNDBhOS04YjlmLWMxZDhiNTU2NDdmZiJ9.Pz8_bz8_Pz94Chw_aD84RWRObz4=");
         Assert.assertEquals(TokenValidationResponse.EXPIRED, handler.validateToken(token));
     }
 
     @Test
-    public void blacklisted() throws NoSuchAlgorithmException {
+    public void blacklisted() throws NoSuchAlgorithmException, NoSuchFieldException, IllegalAccessException {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = getToken();
         Assert.assertEquals(TokenValidationResponse.GOOD, handler.validateToken(token));
