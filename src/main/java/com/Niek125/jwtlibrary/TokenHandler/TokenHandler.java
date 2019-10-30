@@ -32,10 +32,12 @@ public class TokenHandler<T> {
                 return TokenValidationResponse.BLACKLISTED;
             }
             if (sigRep.isForged(token, JsonPath.parse(token.getHeader()).read("$.alg"), JsonPath.parse(token.getPayload()).read("$.exp"))) {
+                System.out.println("signature doesn't match");
                 return TokenValidationResponse.FORGED;
             }
             authMaker.makeAuthObject(token.getPayload());
         } catch (Exception e) {//not the right format
+            System.out.println("exception");
             return TokenValidationResponse.FORGED;
         }
         return TokenValidationResponse.GOOD;
