@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cac3d8f5-7691-49d7-9aa5-5c11c50200bb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/AUthObjectTokenHandlerBuilderTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/AuthObjectTokenHandlerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/BlackList/TokenBlackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandler/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Niek125/jwtlibrary/TokenHandlerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Niek125/jwtlibrary/TokenHandlerTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +31,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -52,7 +50,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.com.Niek125.jwtlibrary in JWTLibrary">
+  <component name="RunManager" selected="JUnit.AUthObjectTokenHandlerBuilderTests.buildTest">
+    <configuration name="AUthObjectTokenHandlerBuilderTests.buildTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JWTLibrary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Niek125.jwtlibrary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
+      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.AUthObjectTokenHandlerBuilderTests" />
+      <option name="METHOD_NAME" value="buildTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TokenHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JWTLibrary" />
       <extension name="coverage">
@@ -79,22 +93,6 @@
       <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
       <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.TokenHandlerTests" />
       <option name="METHOD_NAME" value="blacklisted" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TokenHandlerTests.expired" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JWTLibrary" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Niek125.jwtlibrary.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Niek125.jwtlibrary" />
-      <option name="MAIN_CLASS_NAME" value="com.Niek125.jwtlibrary.TokenHandlerTests" />
-      <option name="METHOD_NAME" value="expired" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -132,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AUthObjectTokenHandlerBuilderTests.buildTest" />
         <item itemvalue="JUnit.com.Niek125.jwtlibrary in JWTLibrary" />
         <item itemvalue="JUnit.TokenHandlerTests.forged" />
         <item itemvalue="JUnit.TokenHandlerTests.blacklisted" />
         <item itemvalue="JUnit.TokenHandlerTests" />
-        <item itemvalue="JUnit.TokenHandlerTests.expired" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +153,8 @@
       <workItem from="1571814721377" duration="9913000" />
       <workItem from="1572285951127" duration="4583000" />
       <workItem from="1572337309203" duration="10835000" />
-      <workItem from="1572362706687" duration="989000" />
+      <workItem from="1572362706687" duration="2628000" />
+      <workItem from="1572420475422" duration="2325000" />
     </task>
     <servers />
   </component>

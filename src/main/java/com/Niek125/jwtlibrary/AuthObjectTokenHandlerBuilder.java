@@ -20,6 +20,10 @@ import java.util.concurrent.TimeUnit;
 public class AuthObjectTokenHandlerBuilder extends TokenHandlerBuilder<AuthObject> {
     private long maxDelay;
 
+    public AuthObjectTokenHandlerBuilder(){
+        maxDelay = 0;
+    }
+
     public void configure(long maxDelay, List<ITokenExpiration> expiredTokens, String nonExpiringKey, List<IExpiringKey> expiringKeys, int cleanPeriod) {
         this.maxDelay = maxDelay;
         JWTKey key = JWTKey.getInstance();
