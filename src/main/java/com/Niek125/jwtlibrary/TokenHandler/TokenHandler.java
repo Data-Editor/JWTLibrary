@@ -40,6 +40,7 @@ public class TokenHandler<T> {
             System.out.println(TokenValidationResponse.FORGED);
             authMaker.makeAuthObject(token.getPayload());
         } catch (Exception e) {//not the right format
+            System.out.println("exception");
             return TokenValidationResponse.FORGED;
         }
         return TokenValidationResponse.GOOD;
