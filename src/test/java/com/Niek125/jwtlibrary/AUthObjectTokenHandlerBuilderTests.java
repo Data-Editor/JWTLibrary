@@ -46,5 +46,6 @@ public class AUthObjectTokenHandlerBuilderTests {
         Object eKeys = fEKeys.get(key);
         Assert.assertEquals(0, ((List<TokenExpiration>)list).size());
         Assert.assertEquals(1, ((List<ExpiringKey>)eKeys).size());
+        Assert.assertNotNull(builder.getKey());
     }
 }

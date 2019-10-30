@@ -82,6 +82,13 @@ public class TokenHandlerTests {
     }
 
     @Test
+    public void assertTime() throws InterruptedException {
+        long t = System.currentTimeMillis();
+        Thread.sleep(200);
+        Assert.assertEquals(System.currentTimeMillis(), t);
+    }
+
+    @Test
     public void blacklisted() throws NoSuchAlgorithmException {
         TokenHandler<AuthObject> handler = getTokenHandler();
         IToken token = getToken();
